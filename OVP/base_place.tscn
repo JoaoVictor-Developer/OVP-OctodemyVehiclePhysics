@@ -1,0 +1,218 @@
+[gd_scene load_steps=14 format=3 uid="uid://bnxpcgbm4vey"]
+
+[ext_resource type="Texture2D" uid="uid://c4u2xxs3s08do" path="res://icon.svg" id="1_g4238"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pfj8t"]
+sky_top_color = Color(0.864615, 0.481581, 0.793199, 1)
+sky_horizon_color = Color(0.898177, 0.794669, 0.863573, 1)
+ground_horizon_color = Color(0.898177, 0.794669, 0.863573, 1)
+
+[sub_resource type="Sky" id="Sky_0fcu4"]
+sky_material = SubResource("ProceduralSkyMaterial_pfj8t")
+
+[sub_resource type="Environment" id="Environment_txbay"]
+background_mode = 2
+sky = SubResource("Sky_0fcu4")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ro2ks"]
+points = PackedVector3Array(-0.5, -2.5, 0, -0.497651, -2.5, -0.0490407, -0.497651, -2.5, 0.0489429, -0.5, 2.5, 0, -0.490407, -2.5, -0.097592, -0.497651, 2.5, -0.0490407, -0.490407, -2.5, 0.0974941, -0.497651, 2.5, 0.0489429, -0.478563, -2.5, -0.145164, -0.490407, 2.5, -0.097592, -0.478563, -2.5, 0.145067, -0.490407, 2.5, 0.0974941, -0.46202, -2.5, -0.191366, -0.478563, 2.5, -0.145164, -0.46202, -2.5, 0.191269, -0.478563, 2.5, 0.145067, -0.440975, -2.5, -0.235709, -0.46202, 2.5, -0.191366, -0.440975, -2.5, 0.235611, -0.46202, 2.5, 0.191269, -0.415818, -2.5, -0.2778, -0.440975, 2.5, -0.235709, -0.415818, -2.5, 0.277702, -0.440975, 2.5, 0.235611, -0.386551, -2.5, -0.317247, -0.415818, 2.5, -0.2778, -0.386551, -2.5, 0.31715, -0.415818, 2.5, 0.277702, -0.353563, -2.5, -0.353563, -0.386551, 2.5, -0.317247, -0.353563, -2.5, 0.353465, -0.386551, 2.5, 0.31715, -0.317247, -2.5, -0.386551, -0.353563, 2.5, -0.353563, -0.317247, -2.5, 0.386453, -0.353563, 2.5, 0.353465, -0.2778, -2.5, -0.415818, -0.317247, 2.5, -0.386551, -0.2778, -2.5, 0.41572, -0.317247, 2.5, 0.386453, -0.235709, -2.5, -0.440975, -0.2778, 2.5, -0.415818, -0.235709, -2.5, 0.440877, -0.2778, 2.5, 0.41572, -0.191366, -2.5, -0.46202, -0.235709, 2.5, -0.440975, -0.191366, -2.5, 0.461922, -0.235709, 2.5, 0.440877, -0.145164, -2.5, -0.478563, -0.191366, 2.5, -0.46202, -0.145164, -2.5, 0.478465, -0.191366, 2.5, 0.461922, -0.097592, -2.5, -0.490407, -0.145164, 2.5, -0.478563, -0.097592, -2.5, 0.490309, -0.145164, 2.5, 0.478465, -0.0490407, -2.5, -0.497651, -0.097592, 2.5, -0.490407, -0.0490407, -2.5, 0.497553, -0.097592, 2.5, 0.490309, 0, -2.5, -0.5, -0.0490407, 2.5, -0.497651, 0, -2.5, 0.5, -0.0490407, 2.5, 0.497553, 0.0489429, -2.5, -0.497651, 0, 2.5, -0.5, 0.0489429, -2.5, 0.497553, 0, 2.5, 0.5, 0.0974941, -2.5, -0.490407, 0.0489429, 2.5, -0.497651, 0.0974941, -2.5, 0.490309, 0.0489429, 2.5, 0.497553, 0.145067, -2.5, -0.478563, 0.0974941, 2.5, -0.490407, 0.145067, -2.5, 0.478465, 0.0974941, 2.5, 0.490309, 0.191269, -2.5, -0.46202, 0.145067, 2.5, -0.478563, 0.191269, -2.5, 0.461922, 0.145067, 2.5, 0.478465, 0.235611, -2.5, -0.440975, 0.191269, 2.5, -0.46202, 0.235611, -2.5, 0.440877, 0.191269, 2.5, 0.461922, 0.277702, -2.5, -0.415818, 0.235611, 2.5, -0.440975, 0.277702, -2.5, 0.41572, 0.235611, 2.5, 0.440877, 0.31715, -2.5, -0.386551, 0.277702, 2.5, -0.415818, 0.31715, -2.5, 0.386453, 0.277702, 2.5, 0.41572, 0.353465, -2.5, -0.353563, 0.31715, 2.5, -0.386551, 0.353465, -2.5, 0.353465, 0.31715, 2.5, 0.386453, 0.386453, -2.5, -0.317247, 0.353465, 2.5, -0.353563, 0.386453, -2.5, 0.31715, 0.353465, 2.5, 0.353465, 0.41572, -2.5, -0.2778, 0.386453, 2.5, -0.317247, 0.41572, -2.5, 0.277702, 0.386453, 2.5, 0.31715, 0.440877, -2.5, -0.235709, 0.41572, 2.5, -0.2778, 0.440877, -2.5, 0.235611, 0.41572, 2.5, 0.277702, 0.461922, -2.5, -0.191366, 0.440877, 2.5, -0.235709, 0.461922, -2.5, 0.191269, 0.440877, 2.5, 0.235611, 0.478465, -2.5, -0.145164, 0.461922, 2.5, -0.191366, 0.478465, -2.5, 0.145067, 0.461922, 2.5, 0.191269, 0.490309, -2.5, -0.097592, 0.478465, 2.5, -0.145164, 0.490309, -2.5, 0.0974941, 0.478465, 2.5, 0.145067, 0.497553, -2.5, -0.0490407, 0.490309, 2.5, -0.097592, 0.497553, -2.5, 0.0489429, 0.490309, 2.5, 0.0974941, 0.5, -2.5, 0, 0.497553, 2.5, -0.0490407, 0.497553, 2.5, 0.0489429, 0.5, 2.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nss17"]
+albedo_texture = ExtResource("1_g4238")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u7dfm"]
+material = SubResource("StandardMaterial3D_nss17")
+height = 5.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gglpq"]
+points = PackedVector3Array(1, -1, 2.5, -1.0001, -1, 2.5, 1, -1, -2.5, -2, 1, 2.5, -1.0001, -1, -2.5, -2, 1, -2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rk2s"]
+albedo_texture = ExtResource("1_g4238")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_v047c"]
+material = SubResource("StandardMaterial3D_2rk2s")
+left_to_right = -0.5
+size = Vector3(2, 2, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fl6nv"]
+points = PackedVector3Array(-100, -0.1, -100, -100, 0.1, -100, 100, -0.1, -100, -100, -0.1, 100, -100, 0.1, 100, 100, 0.1, -100, 100, -0.1, 100, 100, 0.1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4get0"]
+albedo_color = Color(0.677567, 0.677567, 0.677567, 1)
+albedo_texture = ExtResource("1_g4238")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_qiajj"]
+material = SubResource("StandardMaterial3D_4get0")
+size = Vector3(200, 0.2, 200)
+
+[node name="BasePlace" type="Node3D"]
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_txbay")
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.994703, 0.0556836, -0.086404, 0, 0.840567, 0.541708, 0.102793, 0.538839, -0.836114, 0, 0, 0)
+light_color = Color(1, 0.905882, 1, 1)
+shadow_enabled = true
+
+[node name="SuspensionTest" type="Node3D" parent="."]
+
+[node name="SuspensionTest" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 8.93849, 0, -6.09774)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest2" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 8.93849, -0.222017, -12.0977)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest2"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest2"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest3" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 9.93849, 0, -6.09774)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest3"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest3"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest4" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 9.93849, -0.222017, -12.0977)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest4"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest4"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest5" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 10.9385, 0, -6.09774)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest5"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest5"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest6" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 10.9385, -0.222017, -12.0977)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest6"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest6"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest7" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 11.9385, 0, -6.09774)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest7"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest7"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest8" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 11.9385, -0.222017, -12.0977)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest8"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest8"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest9" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 12.9385, 0, -6.09774)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest9"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest9"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="SuspensionTest10" type="StaticBody3D" parent="SuspensionTest"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 12.9385, -0.222017, -12.0977)
+
+[node name="Collision" type="CollisionShape3D" parent="SuspensionTest/SuspensionTest10"]
+shape = SubResource("ConvexPolygonShape3D_ro2ks")
+
+[node name="SuspensionTest" type="MeshInstance3D" parent="SuspensionTest/SuspensionTest10"]
+mesh = SubResource("CylinderMesh_u7dfm")
+skeleton = NodePath("../..")
+
+[node name="Incline" type="Node3D" parent="."]
+
+[node name="Incline" type="StaticBody3D" parent="Incline"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9486, 1.119, 6.40121)
+
+[node name="Collision" type="CollisionShape3D" parent="Incline/Incline"]
+shape = SubResource("ConvexPolygonShape3D_gglpq")
+
+[node name="Incline" type="MeshInstance3D" parent="Incline/Incline"]
+mesh = SubResource("PrismMesh_v047c")
+skeleton = NodePath("../..")
+
+[node name="Incline2" type="StaticBody3D" parent="Incline"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.94858, 1.119, 6.40121)
+
+[node name="Collision" type="CollisionShape3D" parent="Incline/Incline2"]
+shape = SubResource("ConvexPolygonShape3D_gglpq")
+
+[node name="Incline" type="MeshInstance3D" parent="Incline/Incline2"]
+mesh = SubResource("PrismMesh_v047c")
+skeleton = NodePath("../..")
+
+[node name="Incline3" type="StaticBody3D" parent="Incline"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9486, 0.118998, 13.4012)
+
+[node name="Collision" type="CollisionShape3D" parent="Incline/Incline3"]
+shape = SubResource("ConvexPolygonShape3D_gglpq")
+
+[node name="Incline" type="MeshInstance3D" parent="Incline/Incline3"]
+mesh = SubResource("PrismMesh_v047c")
+skeleton = NodePath("../..")
+
+[node name="Incline4" type="StaticBody3D" parent="Incline"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.94858, 0.118998, 13.4012)
+
+[node name="Collision" type="CollisionShape3D" parent="Incline/Incline4"]
+shape = SubResource("ConvexPolygonShape3D_gglpq")
+
+[node name="Incline" type="MeshInstance3D" parent="Incline/Incline4"]
+mesh = SubResource("PrismMesh_v047c")
+skeleton = NodePath("../..")
+
+[node name="Base" type="StaticBody3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="Base"]
+shape = SubResource("ConvexPolygonShape3D_fl6nv")
+
+[node name="Base" type="MeshInstance3D" parent="Base"]
+mesh = SubResource("BoxMesh_qiajj")
+skeleton = NodePath("../..")

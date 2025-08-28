@@ -11,5 +11,12 @@ config_version=5
 [application]
 
 config/name="OctodemyVehiclePhysics"
+config/description="This project is based on the Octodemy tutorials with my own additions. It focuses on arcade racing games, or even Simcade, if applicable. :]"
+config/version="0.5"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
