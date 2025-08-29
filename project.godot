@@ -16,7 +16,19 @@ config/version="0.5"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DebugCam="*res://addons/debug_camera/scripts/DebugCamAutoload.gd"
+
 [display]
 
 window/size/viewport_width=1366
 window/size/viewport_height=768
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/debug_camera/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"

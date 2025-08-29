@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnxpcgbm4vey"]
+[gd_scene load_steps=23 format=3 uid="uid://bnxpcgbm4vey"]
 
 [ext_resource type="Texture2D" uid="uid://c4u2xxs3s08do" path="res://icon.svg" id="1_g4238"]
+[ext_resource type="Script" uid="uid://dd0gc764xtdg7" path="res://OVP/Scripts/CarScripts/RaycastCar.gd" id="2_pfj8t"]
+[ext_resource type="Script" uid="uid://vll367ej3lqr" path="res://addons/debug_camera/scripts/DebugCamera3D.gd" id="3_0fcu4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pfj8t"]
 sky_top_color = Color(0.864615, 0.481581, 0.793199, 1)
@@ -52,6 +54,37 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_qiajj"]
 material = SubResource("StandardMaterial3D_4get0")
 size = Vector3(200, 0.2, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fcu4"]
+albedo_color = Color(0.0117647, 1, 0, 1)
+albedo_texture = ExtResource("1_g4238")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_txbay"]
+material = SubResource("StandardMaterial3D_0fcu4")
+size = Vector3(2, 0.5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl6nv"]
+albedo_color = Color(0.0117647, 1, 0, 1)
+albedo_texture = ExtResource("1_g4238")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4get0"]
+material = SubResource("StandardMaterial3D_fl6nv")
+size = Vector3(0.65, 0.4, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qiajj"]
+size = Vector3(2, 0.5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txbay"]
+albedo_color = Color(0.547633, 0.547633, 0.547633, 1)
+albedo_texture = ExtResource("1_g4238")
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fl6nv"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.15
 
 [node name="BasePlace" type="Node3D"]
 
@@ -212,7 +245,64 @@ metadata/_edit_lock_ = true
 
 [node name="Collision" type="CollisionShape3D" parent="Base"]
 shape = SubResource("ConvexPolygonShape3D_fl6nv")
+metadata/_edit_lock_ = true
 
 [node name="Base" type="MeshInstance3D" parent="Base"]
 mesh = SubResource("BoxMesh_qiajj")
 skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="Car" type="RigidBody3D" parent="." node_paths=PackedStringArray("wheels")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mass = 50.0
+script = ExtResource("2_pfj8t")
+wheels = [NodePath("WheelFL"), NodePath("WheelRL"), NodePath("WheelFR"), NodePath("WheelRR")]
+spring_strength = 1000.0
+spring_damping = 100.0
+
+[node name="Body" type="MeshInstance3D" parent="Car"]
+mesh = SubResource("BoxMesh_txbay")
+
+[node name="Back" type="MeshInstance3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32255, -1.08857)
+mesh = SubResource("BoxMesh_4get0")
+
+[node name="Collision" type="CollisionShape3D" parent="Car"]
+shape = SubResource("BoxShape3D_qiajj")
+
+[node name="WheelFL" type="RayCast3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.56182)
+
+[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelFL"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_txbay")
+mesh = SubResource("CylinderMesh_fl6nv")
+
+[node name="WheelRL" type="RayCast3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.43818)
+
+[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelRL"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_txbay")
+mesh = SubResource("CylinderMesh_fl6nv")
+
+[node name="WheelFR" type="RayCast3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.56182)
+
+[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelFR"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_txbay")
+mesh = SubResource("CylinderMesh_fl6nv")
+
+[node name="WheelRR" type="RayCast3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.43818)
+
+[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelRR"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_txbay")
+mesh = SubResource("CylinderMesh_fl6nv")
+
+[node name="DebugCamera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 5, 2, 5)
+script = ExtResource("3_0fcu4")
+metadata/_custom_type_script = "uid://vll367ej3lqr"
