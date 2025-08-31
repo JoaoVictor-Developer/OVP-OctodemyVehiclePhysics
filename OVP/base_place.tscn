@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnxpcgbm4vey"]
+[gd_scene load_steps=25 format=3 uid="uid://bnxpcgbm4vey"]
 
 [ext_resource type="Texture2D" uid="uid://c4u2xxs3s08do" path="res://icon.svg" id="1_g4238"]
 [ext_resource type="Script" uid="uid://dd0gc764xtdg7" path="res://OVP/Scripts/CarScripts/RaycastCar.gd" id="2_pfj8t"]
 [ext_resource type="Script" uid="uid://vll367ej3lqr" path="res://addons/debug_camera/scripts/DebugCamera3D.gd" id="3_0fcu4"]
+[ext_resource type="Script" uid="uid://2ikyjr3y3ca7" path="res://OVP/Scripts/CarScripts/raycastWheel.gd" id="3_txbay"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pfj8t"]
 sky_top_color = Color(0.864615, 0.481581, 0.793199, 1)
@@ -22,6 +23,7 @@ glow_enabled = true
 points = PackedVector3Array(-0.5, -2.5, 0, -0.497651, -2.5, -0.0490407, -0.497651, -2.5, 0.0489429, -0.5, 2.5, 0, -0.490407, -2.5, -0.097592, -0.497651, 2.5, -0.0490407, -0.490407, -2.5, 0.0974941, -0.497651, 2.5, 0.0489429, -0.478563, -2.5, -0.145164, -0.490407, 2.5, -0.097592, -0.478563, -2.5, 0.145067, -0.490407, 2.5, 0.0974941, -0.46202, -2.5, -0.191366, -0.478563, 2.5, -0.145164, -0.46202, -2.5, 0.191269, -0.478563, 2.5, 0.145067, -0.440975, -2.5, -0.235709, -0.46202, 2.5, -0.191366, -0.440975, -2.5, 0.235611, -0.46202, 2.5, 0.191269, -0.415818, -2.5, -0.2778, -0.440975, 2.5, -0.235709, -0.415818, -2.5, 0.277702, -0.440975, 2.5, 0.235611, -0.386551, -2.5, -0.317247, -0.415818, 2.5, -0.2778, -0.386551, -2.5, 0.31715, -0.415818, 2.5, 0.277702, -0.353563, -2.5, -0.353563, -0.386551, 2.5, -0.317247, -0.353563, -2.5, 0.353465, -0.386551, 2.5, 0.31715, -0.317247, -2.5, -0.386551, -0.353563, 2.5, -0.353563, -0.317247, -2.5, 0.386453, -0.353563, 2.5, 0.353465, -0.2778, -2.5, -0.415818, -0.317247, 2.5, -0.386551, -0.2778, -2.5, 0.41572, -0.317247, 2.5, 0.386453, -0.235709, -2.5, -0.440975, -0.2778, 2.5, -0.415818, -0.235709, -2.5, 0.440877, -0.2778, 2.5, 0.41572, -0.191366, -2.5, -0.46202, -0.235709, 2.5, -0.440975, -0.191366, -2.5, 0.461922, -0.235709, 2.5, 0.440877, -0.145164, -2.5, -0.478563, -0.191366, 2.5, -0.46202, -0.145164, -2.5, 0.478465, -0.191366, 2.5, 0.461922, -0.097592, -2.5, -0.490407, -0.145164, 2.5, -0.478563, -0.097592, -2.5, 0.490309, -0.145164, 2.5, 0.478465, -0.0490407, -2.5, -0.497651, -0.097592, 2.5, -0.490407, -0.0490407, -2.5, 0.497553, -0.097592, 2.5, 0.490309, 0, -2.5, -0.5, -0.0490407, 2.5, -0.497651, 0, -2.5, 0.5, -0.0490407, 2.5, 0.497553, 0.0489429, -2.5, -0.497651, 0, 2.5, -0.5, 0.0489429, -2.5, 0.497553, 0, 2.5, 0.5, 0.0974941, -2.5, -0.490407, 0.0489429, 2.5, -0.497651, 0.0974941, -2.5, 0.490309, 0.0489429, 2.5, 0.497553, 0.145067, -2.5, -0.478563, 0.0974941, 2.5, -0.490407, 0.145067, -2.5, 0.478465, 0.0974941, 2.5, 0.490309, 0.191269, -2.5, -0.46202, 0.145067, 2.5, -0.478563, 0.191269, -2.5, 0.461922, 0.145067, 2.5, 0.478465, 0.235611, -2.5, -0.440975, 0.191269, 2.5, -0.46202, 0.235611, -2.5, 0.440877, 0.191269, 2.5, 0.461922, 0.277702, -2.5, -0.415818, 0.235611, 2.5, -0.440975, 0.277702, -2.5, 0.41572, 0.235611, 2.5, 0.440877, 0.31715, -2.5, -0.386551, 0.277702, 2.5, -0.415818, 0.31715, -2.5, 0.386453, 0.277702, 2.5, 0.41572, 0.353465, -2.5, -0.353563, 0.31715, 2.5, -0.386551, 0.353465, -2.5, 0.353465, 0.31715, 2.5, 0.386453, 0.386453, -2.5, -0.317247, 0.353465, 2.5, -0.353563, 0.386453, -2.5, 0.31715, 0.353465, 2.5, 0.353465, 0.41572, -2.5, -0.2778, 0.386453, 2.5, -0.317247, 0.41572, -2.5, 0.277702, 0.386453, 2.5, 0.31715, 0.440877, -2.5, -0.235709, 0.41572, 2.5, -0.2778, 0.440877, -2.5, 0.235611, 0.41572, 2.5, 0.277702, 0.461922, -2.5, -0.191366, 0.440877, 2.5, -0.235709, 0.461922, -2.5, 0.191269, 0.440877, 2.5, 0.235611, 0.478465, -2.5, -0.145164, 0.461922, 2.5, -0.191366, 0.478465, -2.5, 0.145067, 0.461922, 2.5, 0.191269, 0.490309, -2.5, -0.097592, 0.478465, 2.5, -0.145164, 0.490309, -2.5, 0.0974941, 0.478465, 2.5, 0.145067, 0.497553, -2.5, -0.0490407, 0.490309, 2.5, -0.097592, 0.497553, -2.5, 0.0489429, 0.490309, 2.5, 0.0974941, 0.5, -2.5, 0, 0.497553, 2.5, -0.0490407, 0.497553, 2.5, 0.0489429, 0.5, 2.5, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nss17"]
+albedo_color = Color(1, 1, 0, 1)
 albedo_texture = ExtResource("1_g4238")
 uv1_scale = Vector3(0.3, 0.3, 0.3)
 uv1_triplanar = true
@@ -34,6 +36,7 @@ height = 5.0
 points = PackedVector3Array(1, -1, 2.5, -1.0001, -1, 2.5, 1, -1, -2.5, -2, 1, 2.5, -1.0001, -1, -2.5, -2, 1, -2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rk2s"]
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("1_g4238")
 uv1_scale = Vector3(0.4, 0.4, 0.4)
 uv1_triplanar = true
@@ -43,9 +46,6 @@ material = SubResource("StandardMaterial3D_2rk2s")
 left_to_right = -0.5
 size = Vector3(2, 2, 5)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fl6nv"]
-points = PackedVector3Array(-100, -0.1, -100, -100, 0.1, -100, 100, -0.1, -100, -100, -0.1, 100, -100, 0.1, 100, 100, 0.1, -100, 100, -0.1, 100, 100, 0.1, 100)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4get0"]
 albedo_color = Color(0.677567, 0.677567, 0.677567, 1)
 albedo_texture = ExtResource("1_g4238")
@@ -53,7 +53,15 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_qiajj"]
 material = SubResource("StandardMaterial3D_4get0")
-size = Vector3(200, 0.2, 200)
+size = Vector3(400, 0.2, 400)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_txbay"]
+points = PackedVector3Array(-200, -0.1, -200, -200, 0.1, -200, 200, -0.1, -200, -200, -0.1, 200, -200, 0.1, 200, 200, 0.1, -200, 200, -0.1, 200, 200, 0.1, 200)
+
+[sub_resource type="Curve" id="Curve_txbay"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.3, 0.8), 0.0, 0.0, 0, 0, Vector2(0.6, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fcu4"]
 albedo_color = Color(0.0117647, 1, 0, 1)
@@ -243,66 +251,83 @@ skeleton = NodePath("../..")
 [node name="Base" type="StaticBody3D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Collision" type="CollisionShape3D" parent="Base"]
-shape = SubResource("ConvexPolygonShape3D_fl6nv")
-metadata/_edit_lock_ = true
-
 [node name="Base" type="MeshInstance3D" parent="Base"]
 mesh = SubResource("BoxMesh_qiajj")
 skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
 
+[node name="Collision" type="CollisionShape3D" parent="Base"]
+shape = SubResource("ConvexPolygonShape3D_txbay")
+
 [node name="Car" type="RigidBody3D" parent="." node_paths=PackedStringArray("wheels")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -15.3676, 1, 6.29752)
 mass = 50.0
 script = ExtResource("2_pfj8t")
-wheels = [NodePath("WheelFL"), NodePath("WheelRL"), NodePath("WheelFR"), NodePath("WheelRR")]
-spring_strength = 1000.0
-spring_damping = 100.0
+wheels = [NodePath("WheelRL"), NodePath("WheelFL"), NodePath("WheelRR"), NodePath("WheelFR")]
+accel_curve = SubResource("Curve_txbay")
 
 [node name="Body" type="MeshInstance3D" parent="Car"]
 mesh = SubResource("BoxMesh_txbay")
 
 [node name="Back" type="MeshInstance3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32255, -1.08857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32255, 0.91143)
 mesh = SubResource("BoxMesh_4get0")
 
 [node name="Collision" type="CollisionShape3D" parent="Car"]
 shape = SubResource("BoxShape3D_qiajj")
 
-[node name="WheelFL" type="RayCast3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.56182)
-
-[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelFL"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
-material_override = SubResource("StandardMaterial3D_txbay")
-mesh = SubResource("CylinderMesh_fl6nv")
-
 [node name="WheelRL" type="RayCast3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.43818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.56182)
+enabled = false
+script = ExtResource("3_txbay")
+spring_strength = 5000.0
+spring_damping = 120.0
+is_motor = true
 
 [node name="WheelBody" type="MeshInstance3D" parent="Car/WheelRL"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
 material_override = SubResource("StandardMaterial3D_txbay")
 mesh = SubResource("CylinderMesh_fl6nv")
 
-[node name="WheelFR" type="RayCast3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.56182)
+[node name="WheelFL" type="RayCast3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.43818)
+enabled = false
+script = ExtResource("3_txbay")
+spring_strength = 5000.0
+spring_damping = 120.0
 
-[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelFR"]
+[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelFL"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
 material_override = SubResource("StandardMaterial3D_txbay")
 mesh = SubResource("CylinderMesh_fl6nv")
 
 [node name="WheelRR" type="RayCast3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.43818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.56182)
+enabled = false
+script = ExtResource("3_txbay")
+spring_strength = 5000.0
+spring_damping = 120.0
+is_motor = true
 
 [node name="WheelBody" type="MeshInstance3D" parent="Car/WheelRR"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
 material_override = SubResource("StandardMaterial3D_txbay")
 mesh = SubResource("CylinderMesh_fl6nv")
 
+[node name="WheelFR" type="RayCast3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.43818)
+enabled = false
+script = ExtResource("3_txbay")
+spring_strength = 5000.0
+spring_damping = 120.0
+
+[node name="WheelBody" type="MeshInstance3D" parent="Car/WheelFR"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_txbay")
+mesh = SubResource("CylinderMesh_fl6nv")
+
 [node name="DebugCamera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 5, 2, 5)
+transform = Transform3D(-1, -2.26267e-08, -3.22862e-07, 6.17073e-08, 0.965926, -0.258819, 3.17717e-07, -0.258819, -0.965926, 11.2513, 0.48386, -18.4216)
+fov = 51.6802
 script = ExtResource("3_0fcu4")
 metadata/_custom_type_script = "uid://vll367ej3lqr"
